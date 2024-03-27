@@ -1,0 +1,36 @@
+
+.container {
+    width: 1200px;
+    margin: auto;
+    background-color: aqua;
+}
+
+.header{
+    padding: 30px;
+    border-bottom: 10px lightblue;
+    text-align: justify;
+    background-color: azure;
+}
+
+.isi{
+    padding: 20px;
+    margin-left: 10px;
+    border-top: 5px lightblue;
+    border-top: 5px lightblue;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+   
+}
+
+
+.footer{
+    height: 150px;
+    background-color: azure;
+    font-size: 10pt;
+    border-top: 5px solid lightblue;
+    text-align: center;
+
+}
+
+    

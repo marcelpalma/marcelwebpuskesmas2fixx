@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+        <link rel="stylesheet" href="tugas6.css">
+        <style>
+        .ol-geocoder.gcd-gl-container {
+            top: 30px!important;
+            left: 8px!important;
+        }
+        .ol-touch .ol-geocoder.gcd-gl-container{
+            top: 50px!important;
+        }
+        .ol-geocoder .gcd-gl-btn:after{
+            display:none;
+        }
+        </style>
+<style>
+.search-layer {
+  top: 100px;
+  left: .5em;
+}
+.ol-touch .search-layer {
+  top: 100px;
+}
+</style>
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        .ol-control button {
+            background-color: #f8f8f8 !important;
+            color: #000000 !important;
+            border-radius: 0px !important;
+        }
+        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 3px !important;
+        }
+        .ol-scale-line {
+            background: none !important;
+        }
+        .ol-scale-line-inner {
+            border: 2px solid #f8f8f8 !important;
+            border-top: none !important;
+            background: rgba(255, 255, 255, 0.5) !important;
+            color: black !important;
+        }
+        </style>
+        <link href="resources/ol-geocoder.min.css" rel="stylesheet">
+        <style>
+        #map {
+            width: 1145px;
+            height: 700px;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="gambar">
+                
+            </div>
+            <div class="header">
+                <h1> Peta Persebaran Puskesmas Kabupaten Bantul</h1>
+                <h3>Pengertian tentang Puskesmas</h3>
+                <p>Puskesmas atau Pusat Kesehatan Masyarakat, adalah salah satu komponen penting dalam sistem pelayanan kesehatan di Indonesia. Puskesmas sendiri bertujuan untuk memberikan pelayanan kesehatan dasar yang terjangkau dan merata kepada masyarakat di tingkat desa atau kelurahan dan kecamatan. 
+                    Puskesmas juga hadir sebagai salah satu program pembangunan di bidang kesehatan dan menjadi salah satu upaya untuk mewujudkan visi “Indonesia Sehat”. Oleh karenanya, keberadaan puskesmas di setiap desa/kelurahan dan juga kecamatan sangat penting untuk menjangkau masyarakat di seluruh pelosok negeri yang membutuhkan layanan kesehatan.</p>
+
+                    <p>Namun, dari pentingnya keberadaan dan fungsi Puskesmas ini, tahukan kamu bagaimana sejarah Puskesmas di Indonesia? Dan sejak kapan ide Puskesmas ini muncul?</p>
+                    
+                    <p>Berdasarkan berbagai sumber, konsep Puskesmas dicetuskan pada tahun 1968 ketika terjadinya Rapat Kerja Kesehatan Nasional (Rakerkesnas) di Jakarta. Pada rapat itu terdapat pembahasan mengenai upaya untuk mengorganisir sistem pelayanan kesehatan di tanah air. Upaya tersebut dilatar belakangi karena layanan kesehatan tingkat pertama beserta program-program kesehatan seperti BKIA (Balai Kesejahteraan Ibu dan Anak), BP (Balai Pengobatan), P4M (Pengendalian dan Pencegahan Penyakit Menular) dan sebagainya masih dirasa kurang efektif dan cenderung berjalan sendiri-sendiri. 
+                    Sehingga, melalui Rakerkesnas itu timbul gagasan untuk menyatukan semua pelayanan tingkat pertama ke dalam suatu organisasi yang dipercaya dan diberi nama Pusat Kesehatan Masyarakat (Puskesmas).</p>
+                    
+                    <p>Pembahasan mengenai Puskesmas ini, terutama pada sistem kerjanya terjadi pada tiga Rakerkesnas, yang dimulai pada Rakerkesnas I pada tahun 1968 yang mengkategorikan Puskesmas berdasarkan tingkat wilayah, kemudian Rakerkesnas II pada tahun 1969 yang membagi Puskesmas berdasarkan kategori tenaga pemimpin, dan berubah lagi pada Rakerkesnas III pada tahun 1970 yang membagi Puskesmas berdasarkan wilayah kerja tingkat. 
+                    Namun, perubahan-perubahan mengenai kategori Puskesmas tetap terjadi di tahun-tahun berikutnya hingga pada saat ini sistem Puskesmas hanya terbagai menjadi dua kategori, yaitu Puskesmas Kecamatan (Puskesmas Pembina) dan Puskesmas Kelurahan/Desa (Puskesmas Pembantu).</p>
+                    
+                    <p>Selain itu, pada era orde baru, pembangunan Puskesmas telah mendapatkan persetujuan dari Presiden Soeharto, sehingga pemerintah pada saat itu memasukkan program Puskesmas ini kedalam program Pengembangan Lima Tahun (Pelita). Kemudian, pada Pelita II antara tahun 1974 hingga 1979, pemerintahan Orde Baru berhasil membangun sekitar 2.000 Puskesmas. </p>
+                    Hingga 1993, jumlah Puskesmas yang dibangun oleh pemerintah Orde Baru mencapai 6.749 unit di seluruh Indonesia. Kemudian, hingga saat ini jumlah Puskesmas yang tersebar di seluruh Indonesia berjumlah 10.374 unit.</p>
+
+                    <h4>Berikut merupakan persebaran Puskesmas di Kabupaten Bantul</h4>
+
+            </div>
+            <div class="isi">
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="resources/polyfills.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol-layerswitcher.js"></script>
+        <script src="resources/ol-geocoder.js"></script>
+        <script src="layers/AREADESA_1.js"></script><script src="layers/KEBUN_2.js"></script><script src="layers/SAWAH_3.js"></script><script src="layers/BANGUNAN_4.js"></script><script src="layers/PEMUKIMAN_5.js"></script><script src="layers/BATASADMINISTRASIDESA_6.js"></script><script src="layers/JALAN_7.js"></script><script src="layers/SUNGAI_8.js"></script><script src="layers/PUSKESMAS_9.js"></script>
+        <script src="styles/AREADESA_1_style.js"></script><script src="styles/KEBUN_2_style.js"></script><script src="styles/SAWAH_3_style.js"></script><script src="styles/BANGUNAN_4_style.js"></script><script src="styles/PEMUKIMAN_5_style.js"></script><script src="styles/BATASADMINISTRASIDESA_6_style.js"></script><script src="styles/JALAN_7_style.js"></script><script src="styles/SUNGAI_8_style.js"></script><script src="styles/PUSKESMAS_9_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/qgis2web.js"></script>
+        </div>
+        <div class="footer">
+            <h4>Dibuat oleh : Marcelinus Palma Surya Valendra</h4>
+            <h4>NIM : 22/499277/SV/21297</h4>
+
+
+        </div>
+        </div>
+    </body>
+</html>
